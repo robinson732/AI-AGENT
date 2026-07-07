@@ -1,12 +1,12 @@
 from flask import Flask
-from config import Config
+from Config import Config
 from extensions import db, cors
 
 # import routes
-from routes.chat import chat_bp
-from routes.menu import menu_bp
-from routes.orders import orders_bp
-from routes.reservations import reservations_bp
+from routes.chat_routes import chat_bp
+from routes.menu_routes import menu_bp
+from routes.order_routes import orders_bp
+from routes.reservation_routes import reservations_bp
 
 def create_app():
     app = Flask(__name__)

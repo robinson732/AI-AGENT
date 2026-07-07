@@ -1,23 +1,22 @@
 from extensions import db
-from datetime import datetime
+from datetime import datetime, timezone
+
 
 class Order(db.Model):
-
     __tablename__ = "orders"
 
     id = db.Column(db.Integer, primary_key=True)
-    customer_name = db.Column(db.String(100), default="Guest")
-    item = db.Column(db.String(100), nullable=False)
-    quantity = db.Column(db.Integer, nullable=False)
-    total_price = db.Column(db.Float, nullable=False)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
 
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "customer_name": self.customer_name,
-            "item": self.item,
-            "quantity": self.quantity,
-            "total_price": self.total_price,
-            "timestamp": self.timestamp.isoformat()
-        }
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    customer_name = db.Column(db.String(120), nullable=False)
+
+    item_id = db.Column(db.Integer, db.ForeignKey('menu_item.id'), nullable=False)
+    item = db.relationship('MenuItem', backref='orders')
+
+    quantity = db.Column(db.Integer, default=1)
+
+    total_price = db.Column(db.Float)
+
+    status = db.Column(db.String(50), default="pending")
+
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))

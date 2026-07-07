@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from models.message import Message
 from extensions import db
+from services.chatbot_service import get_chatbot_response
 
 chat_bp = Blueprint("chat", __name__, url_prefix="/chat")
 
@@ -8,15 +9,9 @@ chat_bp = Blueprint("chat", __name__, url_prefix="/chat")
 def chat():
     user_message = request.json.get("message")
 
-    # simple rule bot
-    if "menu" in user_message.lower():
-        response = "You can ask for pizza, burger, pasta, or salads."
-    elif "reservation" in user_message.lower():
-        response = "Sure! How many guests?"
-    else:
-        response = "Sorry, I didn't understand that."
+    response = get_chatbot_response(user_message)
 
-    msg = Message(user_message=user_message, bot_response=response)
+    msg = Message(user_message=user_message, bot_reply=response)
     db.session.add(msg)
     db.session.commit()
 
