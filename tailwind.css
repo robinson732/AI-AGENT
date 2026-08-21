@@ -1,0 +1,27 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  theme: {
+    extend: {
+      colors: {
+        ink: "#16211C",
+        bone: "#F3EFE4",
+        brass: "#C9A227",
+        "brass-dim": "#8F7419",
+        bottle: "#28402F",
+        "bottle-light": "#324C39",
+        ember: "#B4462A",
+      },
+      fontFamily: {
+        display: ["Fraunces", "serif"],
+        sans: ["Inter", "sans-serif"],
+        mono: ["'IBM Plex Mono'", "monospace"],
+      },
+      backgroundImage: {
+        perforation:
+          "repeating-linear-gradient(90deg, transparent, transparent 6px, rgba(243,239,228,0.35) 6px, rgba(243,239,228,0.35) 8px)",
+      },
+    },
+  },
+  plugins: [],
+};

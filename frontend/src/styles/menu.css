@@ -1,0 +1,27 @@
+.menu-page {
+  @apply mx-auto max-w-5xl px-6 py-10;
+}
+.menu-header {
+  @apply mb-10;
+}
+.menu-eyebrow {
+  @apply font-mono text-xs uppercase tracking-widest text-amber-700;
+}
+.menu-title {
+  @apply mt-2 font-display text-3xl text-stone-900;
+}
+.menu-status-loading {
+  @apply text-stone-400;
+}
+.menu-status-error {
+  @apply text-red-600;
+}
+.menu-section {
+  @apply mb-10;
+}
+.menu-section-title {
+  @apply mb-4 font-display text-xl text-amber-700;
+}
+.menu-grid {
+  @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3;
+}

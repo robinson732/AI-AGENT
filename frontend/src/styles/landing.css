@@ -1,0 +1,45 @@
+.landing-hero {
+  @apply relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-stone-900;
+}
+.landing-hero-image {
+  @apply absolute inset-0 h-full w-full object-cover;
+}
+.landing-hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-stone-900/60 via-stone-900/70 to-stone-900;
+}
+.landing-hero-glow {
+  @apply absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,theme(colors.amber.900)/40,transparent_60%)];
+}
+.landing-hero-content {
+  @apply relative z-10 mx-auto max-w-2xl px-6 text-center;
+}
+.landing-eyebrow {
+  @apply font-mono text-xs uppercase tracking-widest text-amber-400;
+}
+.landing-title {
+  @apply mt-3 font-display text-5xl text-white sm:text-6xl;
+}
+.landing-subtitle {
+  @apply mt-4 text-stone-300;
+}
+.landing-actions {
+  @apply mt-10 flex flex-wrap items-center justify-center gap-4;
+}
+.landing-btn-primary {
+  @apply rounded-md bg-amber-600 px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90;
+}
+.landing-btn-secondary {
+  @apply rounded-md border border-stone-400 px-6 py-3 text-sm font-medium text-stone-100 transition-colors hover:border-amber-400 hover:text-amber-400;
+}
+.landing-section {
+  @apply mx-auto max-w-4xl px-6 py-16 text-center;
+}
+.landing-section-eyebrow {
+  @apply font-mono text-xs uppercase tracking-widest text-amber-700;
+}
+.landing-section-title {
+  @apply mt-2 font-display text-2xl text-stone-900;
+}
+.landing-section-body {
+  @apply mt-3 text-stone-500;
+}s
