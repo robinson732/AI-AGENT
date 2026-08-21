@@ -1,22 +1,79 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #16211c;
+  --color-ink-soft: #1e2c25;
+  --color-bone: #f3efe4;
+  --color-bone-dim: #d9d3c3;
+  --color-brass: #c9a227;
+  --color-brass-dim: #8f7419;
+  --color-bottle: #28402f;
+  --color-bottle-light: #324c39;
+  --color-ember: #b4462a;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --shadow-ticket: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+  --animate-rise: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
   body {
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-body);
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    -webkit-font-smoothing: antialiased;
   }
+
   ::selection {
-    background: #c9a227;
-    color: #16211c;
+    background: var(--color-brass);
+    color: var(--color-ink);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-bottle-light);
+    border-radius: 999px;
   }
 }
 
-@layer utilities {
-  .ticket-shadow {
-    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
-  }
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+@utility grain {
+  background-image: radial-gradient(
+    rgba(243, 239, 228, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 4px 4px;
 }

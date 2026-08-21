@@ -41,7 +41,7 @@ export default function ChatWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-40">
       {open && (
-        <div className="ticket-shadow mb-3 flex h-96 w-80 flex-col rounded-lg border border-bottle-light bg-ink">
+        <div className="shadow-ticket mb-3 flex h-96 w-80 flex-col rounded-lg border border-bottle-light bg-ink">
           <div className="flex items-center justify-between border-b border-bottle-light px-4 py-3">
             <span className="font-display text-sm text-bone">Kitchen assistant</span>
             <button
@@ -94,7 +94,7 @@ export default function ChatWidget() {
 
       <button
         onClick={() => setOpen((o) => !o)}
-        className="ticket-shadow flex h-12 w-12 items-center justify-center rounded-full bg-brass text-ink hover:opacity-90"
+        className="shadow-ticket flex h-12 w-12 items-center justify-center rounded-full bg-brass text-ink hover:opacity-90"
         aria-label="Toggle chat"
       >
         {open ? "×" : "AI"}
